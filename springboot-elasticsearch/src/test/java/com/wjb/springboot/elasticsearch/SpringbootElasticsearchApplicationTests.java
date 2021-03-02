@@ -1,4 +1,4 @@
-package com.wjb.springboot.elasticsearch.springbootelasticsearch;
+package com.wjb.springboot.elasticsearch;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
