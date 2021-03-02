@@ -8,6 +8,7 @@ class SpringbootElasticsearchApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }

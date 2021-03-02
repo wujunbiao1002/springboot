@@ -1,6 +1,8 @@
 package com.wjb.springboot.elasticsearch.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
@@ -16,6 +18,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
  * @since springboot 0.0.1
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Document(indexName = "user", indexStoreType = "user" )
 public class User {
     @Id

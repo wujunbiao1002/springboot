@@ -1,6 +1,8 @@
 package com.wjb.springboot.elasticsearch.repository;
 
 import com.wjb.springboot.elasticsearch.entity.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 /**
@@ -15,4 +17,6 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
  * @since springboot 0.0.1
  */
 public interface UserRepository extends ElasticsearchRepository<User,String> {
+
+    Page<User> findByName(String name, PageRequest pageRequest);
 }
