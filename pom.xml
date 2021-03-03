@@ -23,6 +23,7 @@
     <modules>
         <module>springboot-websocket</module>
         <module>springboot-elasticsearch</module>
+        <module>springboot-datajpa</module>
     </modules>
 
     <dependencies>
