@@ -2,7 +2,6 @@ package com.wjb.springboot.elasticsearch.service;
 
 import com.wjb.springboot.elasticsearch.entity.User;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 
 import java.util.List;
 import java.util.Optional;
@@ -21,11 +20,17 @@ import java.util.Optional;
 public interface UserService {
     Optional<User> findById(String id);
 
-    User save(User blog);
+    void save(User user);
 
-    void delete(User blog);
+    void delete(String id);
 
-    List<User> findAll();
+    List<User> findByNameLike(String name);
 
-    Page<User> findByName(String name, PageRequest pageRequest);
+    List<User> findByName(String name);
+
+    List<User> searchByKey(String key);
+
+    Page<User> findByDescription(String key, Integer pageNum, Integer pageSize);
+
+    Page<User> searchSimilar(User user, Integer pageNum, Integer pageSize);
 }

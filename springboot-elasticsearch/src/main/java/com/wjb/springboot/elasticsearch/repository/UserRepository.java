@@ -2,8 +2,10 @@ package com.wjb.springboot.elasticsearch.repository;
 
 import com.wjb.springboot.elasticsearch.entity.User;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
+
+import java.util.List;
 
 /**
  * <b><code>UserRepository</code></b>
@@ -18,5 +20,9 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
  */
 public interface UserRepository extends ElasticsearchRepository<User,String> {
 
-    Page<User> findByName(String name, PageRequest pageRequest);
+    List<User> findByNameLike(String name);
+
+    List<User> findByName(String name);
+
+    Page<User> findByDescription(String content, Pageable pageable);
 }

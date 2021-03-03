@@ -6,10 +6,10 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 
 @SpringBootApplication
 @EnableOpenApi
-public class SpringbootElasticsearchApplication {
+public class ElasticsearchApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootElasticsearchApplication.class, args);
+        SpringApplication.run(ElasticsearchApplication.class, args);
     }
 
 }

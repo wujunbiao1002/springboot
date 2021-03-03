@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Wu Junbiao
  */
 @SpringBootApplication
-public class JavaWebSocketApplication {
+public class WebSocketApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JavaWebSocketApplication.class, args);
+		SpringApplication.run(WebSocketApplication.class, args);
 	}
 
 }

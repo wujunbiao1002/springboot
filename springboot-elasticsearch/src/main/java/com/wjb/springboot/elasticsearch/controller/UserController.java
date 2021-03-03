@@ -32,6 +32,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/{id}")
+    @ApiOperation("通过id查询")
     @ApiImplicitParams(@ApiImplicitParam(name = "id", value = "用户id", required = true))
     public User getUserById(@PathVariable String id){
         Optional<User> byId = userService.findById(id);
@@ -39,22 +40,22 @@ public class UserController {
     }
 
     @PostMapping
-    @ApiOperation("增加数据")
+    @ApiOperation("增加")
     public String save(@RequestBody User user){
         userService.save(user);
         return "成功";
     }
 
     @DeleteMapping
-    @ApiOperation("删除数据")
-    public String delete(User user){
-        userService.save(user);
+    @ApiOperation("删除")
+    public String delete(String id){
+        userService.delete(id);
         return "成功";
     }
 
-    @GetMapping("/list")
-    @ApiOperation("查询所有")
-    public List<User> list(){
-        return userService.findAll();
+    @GetMapping("/findByNameLike/{name}")
+    @ApiOperation("名称查询")
+    public List<User> findByNameLike(@PathVariable String name){
+        return userService.findByNameLike(name);
     }
 }

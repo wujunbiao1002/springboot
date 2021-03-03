@@ -1,8 +1,7 @@
 package com.wjb.springboot.elasticsearch.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
@@ -20,11 +19,20 @@ import org.springframework.data.elasticsearch.annotations.Document;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(indexName = "user", indexStoreType = "user" )
+@Builder
+@ToString
+@Document(indexName = "user")
 public class User {
     @Id
+    @ApiModelProperty("id")
     private String id;
+
+    @ApiModelProperty("姓名")
     private String name;
+
+    @ApiModelProperty("年龄")
     private short age;
+
+    @ApiModelProperty("描述")
     private String description;
 }

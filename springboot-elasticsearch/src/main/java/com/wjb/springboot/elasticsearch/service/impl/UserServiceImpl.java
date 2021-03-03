@@ -3,13 +3,13 @@ package com.wjb.springboot.elasticsearch.service.impl;
 import com.wjb.springboot.elasticsearch.entity.User;
 import com.wjb.springboot.elasticsearch.repository.UserRepository;
 import com.wjb.springboot.elasticsearch.service.UserService;
+import org.elasticsearch.index.query.QueryStringQueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * <b><code>UserServiceImpl</code></b>
@@ -33,22 +33,46 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User save(User blog) {
-        return userRepository.save(blog);
+    public void save(User user) {
+        userRepository.save(user);
     }
 
     @Override
-    public void delete(User blog) {
-        userRepository.delete(blog);
+    public void delete(String id) {
+        userRepository.deleteById(id);
     }
 
     @Override
-    public List<User> findAll() {
-        return (List<User>) userRepository.findAll();
+    public List<User> findByNameLike(String name) {
+        return userRepository.findByNameLike(name);
     }
 
     @Override
-    public Page<User> findByName(String name, PageRequest pageRequest) {
-        return userRepository.findByName(name, pageRequest);
+    public List<User> findByName(String name) {
+        return userRepository.findByName(name);
+    }
+
+    @Override
+    public List<User> searchByKey(String key) {
+        QueryStringQueryBuilder builder = new QueryStringQueryBuilder(key);
+        System.out.println("查询的语句:" + builder);
+        Iterable<User> searchResult = userRepository.search(builder);
+        Iterator<User> iterator = searchResult.iterator();
+        List<User> list = new ArrayList<>();
+        while (iterator.hasNext()) {
+            list.add(iterator.next());
+        }
+        return list;
+    }
+
+    @Override
+    public Page<User> findByDescription(String key, Integer pageNum, Integer pageSize) {
+
+        return userRepository.findByDescription(key, PageRequest.of(pageNum - 1, pageSize));
+    }
+
+    @Override
+    public Page<User> searchSimilar(User user, Integer pageNum, Integer pageSize) {
+        return userRepository.searchSimilar(user, new String[]{"name"}, PageRequest.of(pageNum - 1, pageSize));
     }
 }
