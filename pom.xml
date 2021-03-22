@@ -24,6 +24,7 @@
         <module>springboot-websocket</module>
         <module>springboot-elasticsearch</module>
         <module>springboot-datajpa</module>
+        <module>springboot-mybatisplus-generator</module>
     </modules>
 
     <dependencies>

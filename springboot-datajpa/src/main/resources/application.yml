@@ -6,6 +6,7 @@ spring:
     url: jdbc:mysql://192.168.108.24:31784/data_jpa
     username: root
     password: Czps2s4ada@root!
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
