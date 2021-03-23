@@ -1,10 +1,12 @@
 package com.wjb.springboot.mybatisplus.generator;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
+import com.baomidou.mybatisplus.generator.config.po.TableFill;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
@@ -44,7 +46,7 @@ public class CodeGenerator {
         // 是否打开输出目录，默认值：true
         gc.setOpen(false);
         // 是否在xml中添加二级缓存配置，默认值：false
-        gc.setEnableCache(true);
+//        gc.setEnableCache(true);
         // 开发人员类型注释上@author，默认值：null
         gc.setAuthor("Wu Junbiao");
         // 开启 Kotlin 模式，默认值：false
@@ -61,7 +63,7 @@ public class CodeGenerator {
         // ONLY_DATE - 只使用 java.util.date 代替
         // SQL_PACK - 使用 java.sql 包下的
         // TIME_PACK - 使用 java.time 包下的 java8 新的时间类型
-        gc.setDateType(DateType.TIME_PACK);
+        gc.setDateType(DateType.ONLY_DATE);
         // 实体命名方式，默认值：null 例如：%sEntity 生成 UserEntity
         gc.setEntityName(null);
         // 如下配置 %s 为占位符
@@ -88,17 +90,19 @@ public class CodeGenerator {
         // 数据库类型 该类内置了常用的数据库类型【必须】，通过url自动获取
 //        dsc.setDbType();
         // 数据库 schema name，例如 PostgreSQL 可指定为 public
-//        dsc.setSchemaName("public");
+        dsc.setSchemaName("public");
         // 类型转换，默认由 dbType 类型决定选择对应数据库内置实现
 //        dsc.setTypeConvert();
         // 驱动连接的URL
-        dsc.setUrl("jdbc:mysql://192.168.108.24:30133/test-db?useUnicode=true&useSSL=false&characterEncoding=utf8");
+//        dsc.setUrl("jdbc:mysql://192.168.108.24:30133/test-db?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:postgresql://192.168.108.24:31383/hc_db?useUnicode=true&useSSL=false&characterEncoding=utf8");
         // 驱动名称
-        dsc.setDriverName("com.mysql.cj.jdbc.Driver");
+//        dsc.setDriverName("com.mysql.cj.jdbc.Driver");
+        dsc.setDriverName("org.postgresql.Driver");
         // 数据库连接用户名
-        dsc.setUsername("root");
+        dsc.setUsername("postgres");
         // 数据库连接密码
-        dsc.setPassword("123456");
+        dsc.setPassword("svs@2021!");
         mpg.setDataSource(dsc);
 
         /*
@@ -121,7 +125,7 @@ public class CodeGenerator {
         // 父包名。如果为空，将下面子包名必须写全部， 否则就只需写子包名
         pc.setParent("com.wjb.springboot.mybatisplus.generator");
         // Entity包名，默认值：entity
-        pc.setEntity("entity");
+        pc.setEntity("po");
         // Service包名，默认值：service
         pc.setService("service");
         // Service Impl包名，默认值：service.impl
@@ -164,19 +168,79 @@ public class CodeGenerator {
          6.数据库表配置，通过该配置，可指定需要生成哪些表或者排除哪些表
          */
         StrategyConfig strategy = new StrategyConfig();
+        // 是否大写命名，默认值为:false
+//        strategy.setCapitalMode(false);
+        // 是否跳过视图
+//        strategy.setSkipView(false);
+        // 数据库表映射到实体的命名策略,下划线转驼峰命名：underline_to_camel,不做任何改变，原样输出：no_change
         strategy.setNaming(NamingStrategy.underline_to_camel);
+        // 数据库表字段映射到实体的命名策略, 未指定按照 naming 执行
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setEntityLombokModel(true);
-        strategy.setRestControllerStyle(true);
-        // 写于父类中的公共字段
-//        strategy.setSuperEntityColumns("id");
+        // 表前缀
+        strategy.setTablePrefix("hc_");
+        // 字段前缀
+//        strategy.setFieldPrefix();
+        // 自定义继承的Entity类全称，带包名
+//        strategy.setSuperEntityClass("com.wjb.springboot.mybatisplus.generator.model.BaseEntity");
+        // 自定义基础的Entity类，公共字段
+//        strategy.setSuperEntityColumns("id", "created_time");
+        // 自定义继承的Mapper类全称，带包名
+//        strategy.setSuperMapperClass(),
+        // 自定义继承的Service类全称，带包名
+//        strategy.setSuperServiceClass();
+        // 自定义继承的ServiceImpl类全称，带包名
+//        strategy.setSuperServiceImplClass();
+        // 自定义继承的Controller类全称，带包名
+//        strategy.setSuperControllerClass();
+        // 默认激活进行sql模糊表名匹配, 默认值为true
+        //关闭之后likeTable与notLikeTable将失效，include和exclude将使用内存过滤
+        //如果有sql语法兼容性问题的话，请手动设置为false
+        //已知无法使用：MyCat中间件， 支持情况传送门
+        strategy.setEnableSqlFilter(true);
+        // 需要包含的表名，当enableSqlFilter为false时，允许正则表达式（与exclude二选一配置）
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
-        strategy.setControllerMappingHyphenStyle(true);
-        strategy.setTablePrefix(pc.getModuleName() + "_");
-        mpg.setStrategy(strategy);
-        mpg.setTemplateEngine(new VelocityTemplateEngine());
+        // 自3.3.0起，模糊匹配表名（与notLikeTable二选一配置）
+//        strategy.setLikeTable()
+        // 需要排除的表名，当enableSqlFilter为false时，允许正则表达式
+//        strategy.setExclude();
+        // 自3.3.0起，模糊排除表名
+//        strategy.setNotLikeTable();
+        // 【实体】是否生成字段常量（默认 false）
+//        strategy.setEntityColumnConstant(false);
+        // 【实体】是否为链式模型（默认 false）
+//        strategy.setChainModel(false);
+        // 【实体】是否为lombok模型（默认 false） 3.3.2以下版本默认生成了链式模型，3.3.2以后，默认不生成，如有需要，请开启 chainModel
+        strategy.setEntityLombokModel(true);
+        // Boolean类型字段是否移除is前缀（默认 false）
+//        strategy.setEntityBooleanColumnRemoveIsPrefix(false);
+        // 生成 @RestController 控制器
+        strategy.setRestControllerStyle(true);
+        // 驼峰转连字符
+        strategy.setControllerMappingHyphenStyle(false);
+        // 是否生成实体时，生成字段注解
+        strategy.setEntityTableFieldAnnotationEnable(true);
+        // 乐观锁属性名称
+//        strategy.setVersionFieldName("version");
+        // 逻辑删除属性名称
+//        strategy.setLogicDeleteFieldName("delete");
+        // 表填充字段
+        strategy.setTableFillList(getTableFillList());
 
+        mpg.setStrategy(strategy);
+
+        // 执行
+        mpg.setTemplateEngine(new VelocityTemplateEngine());
         mpg.execute();
+    }
+
+    /**
+     * 表填充字段
+     */
+    public static List<TableFill> getTableFillList(){
+        return new ArrayList<TableFill>(){{
+            add(new TableFill("created_time", FieldFill.INSERT));
+            add(new TableFill("updated_time", FieldFill.INSERT_UPDATE));
+        }};
     }
 
     /**
