@@ -1,6 +1,7 @@
 package com.wjb.springboot.mybatisplus.generator;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
@@ -46,9 +47,9 @@ public class CodeGenerator {
         // 是否打开输出目录，默认值：true
         gc.setOpen(false);
         // 是否在xml中添加二级缓存配置，默认值：false
-//        gc.setEnableCache(true);
+        gc.setEnableCache(false);
         // 开发人员类型注释上@author，默认值：null
-        gc.setAuthor("Wu Junbiao");
+        gc.setAuthor("Arjun");
         // 开启 Kotlin 模式，默认值：false
         gc.setKotlin(false);
         // 开启 swagger2 模式，实体属性 Swagger2注解，默认值：false
@@ -56,9 +57,9 @@ public class CodeGenerator {
         // 开启 ActiveRecord 模式，默认值：false
         gc.setActiveRecord(false);
         // 开启 BaseResultMap，默认值：false
-        gc.setBaseResultMap(true);
+        gc.setBaseResultMap(false);
         // 开启 baseColumnList，默认值：false
-        gc.setBaseColumnList(true);
+        gc.setBaseColumnList(false);
         // 时间类型对应策略，默认值：TIME_PACK
         // ONLY_DATE - 只使用 java.util.date 代替
         // SQL_PACK - 使用 java.sql 包下的
@@ -78,7 +79,7 @@ public class CodeGenerator {
         // controller 命名方式，默认值：null 例如：%sAction 生成 UserAction
         gc.setControllerName("%sController");
         // 指定生成的主键的ID类型，默认值：null
-        gc.setIdType(null);
+        gc.setIdType(IdType.AUTO);
         mpg.setGlobalConfig(gc);
 
         /*
@@ -94,10 +95,8 @@ public class CodeGenerator {
         // 类型转换，默认由 dbType 类型决定选择对应数据库内置实现
 //        dsc.setTypeConvert();
         // 驱动连接的URL
-//        dsc.setUrl("jdbc:mysql://192.168.108.24:30133/test-db?useUnicode=true&useSSL=false&characterEncoding=utf8");
-        dsc.setUrl("jdbc:postgresql://192.168.108.24:31383/hc_db?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:postgresql://192.168.108.24:31383/se_db?useUnicode=true&useSSL=false&characterEncoding=utf8");
         // 驱动名称
-//        dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setDriverName("org.postgresql.Driver");
         // 数据库连接用户名
         dsc.setUsername("postgres");
@@ -123,7 +122,7 @@ public class CodeGenerator {
         // 父包模块名
 //        pc.setModuleName(scanner("模块名"));
         // 父包名。如果为空，将下面子包名必须写全部， 否则就只需写子包名
-        pc.setParent("com.wjb.springboot.mybatisplus.generator");
+        pc.setParent("com.richstonedt.svs.se.cs");
         // Entity包名，默认值：entity
         pc.setEntity("po");
         // Service包名，默认值：service
@@ -177,7 +176,7 @@ public class CodeGenerator {
         // 数据库表字段映射到实体的命名策略, 未指定按照 naming 执行
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         // 表前缀
-        strategy.setTablePrefix("hc_");
+        strategy.setTablePrefix("se_");
         // 字段前缀
 //        strategy.setFieldPrefix();
         // 自定义继承的Entity类全称，带包名
