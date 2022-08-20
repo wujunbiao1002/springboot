@@ -8,22 +8,25 @@
         <version>1.0.0</version>
     </parent>
 
-    <groupId>com.wjb.springboot.datajpa</groupId>
-    <artifactId>springboot-datajpa</artifactId>
+    <groupId>com.wjb.springboot.redis</groupId>
+    <artifactId>springboot-redis</artifactId>
     <version>1.0.0</version>
-    <name>springboot-datajpa</name>
-    <description>Spring Data Jpa</description>
+    <name>springboot-redis</name>
+    <description>springboot-redis整合测试</description>
     <packaging>jar</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
         </dependency>
     </dependencies>
 

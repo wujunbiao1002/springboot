@@ -5,19 +5,20 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.3</version>
+        <version>2.4.13</version>
         <relativePath/>
     </parent>
 
     <groupId>com.wjb.springboot</groupId>
     <artifactId>springboot</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>springboot</name>
     <description>Spring Boot相关学习</description>
     <packaging>pom</packaging>
 
     <properties>
         <java.version>1.8</java.version>
+        <springfox.version>3.0.0</springfox.version>
     </properties>
 
     <modules>
@@ -25,6 +26,7 @@
         <module>springboot-elasticsearch</module>
         <module>springboot-datajpa</module>
         <module>springboot-mybatisplus-generator</module>
+        <module>springboot-redis</module>
     </modules>
 
     <dependencies>
@@ -32,29 +34,30 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
-            <version>3.0.0</version>
+            <version>${springfox.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
         </dependency>
     </dependencies>
 </project>

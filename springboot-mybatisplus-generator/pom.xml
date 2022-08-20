@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.wjb.springboot</groupId>
         <artifactId>springboot</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <groupId>com.wjb.springboot.mybatisplus.generator</groupId>
     <artifactId>springboot-mybatisplus-generator</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>springboot-mybatisplus-generator</name>
     <description>Demo project for Spring Boot</description>
 

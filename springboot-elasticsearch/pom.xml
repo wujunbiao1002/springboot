@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.wjb.springboot</groupId>
         <artifactId>springboot</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <groupId>com.wjb.springboot.elasticsearch</groupId>
     <artifactId>springboot-elasticsearch</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>springboot-elasticsearch</name>
     <description>Spring Boot 整合elasticsearch</description>
     <packaging>jar</packaging>
