@@ -25,18 +25,35 @@ public class SecKillController {
     @Autowired
     private SecKillService secKillService;
 
-    @GetMapping("/method1")
-    public String secKillMethod1(){
+    @GetMapping("/standalone")
+    public String secKillMethod1() {
         String uid = UUID.randomUUID().toString();
         boolean b = secKillService.doSecKill(uid, "1000");
-        return "用户id：" + uid + " 秒杀"+(b?"成功":"失败");
+        return "用户id：" + uid + " 秒杀" + (b ? "成功" : "失败");
     }
 
-    @GetMapping("/method2")
-    public String secKillMethod2(){
+    @GetMapping("/lua")
+    public String secKillMethod2() {
         String uid = UUID.randomUUID().toString();
         boolean b = secKillService.secKillLua(uid, "1000");
-        return "用户id：" + uid + " 秒杀"+(b?"成功":"失败");
+        return "用户id：" + uid + " 秒杀" + (b ? "成功" : "失败");
     }
 
+    @GetMapping("/cluster-lua")
+    public String secKillMethod3() {
+        String uid = UUID.randomUUID().toString();
+        boolean b = secKillService.doSecKillClusterLua(uid, "1000");
+        return "用户id：" + uid + " 秒杀" + (b ? "成功" : "失败");
+    }
+
+    @GetMapping("/cluster")
+    public String secKillMethod4() {
+        String uid = UUID.randomUUID().toString();
+        try {
+            secKillService.doSecKillCluster(uid, "1000");
+            return "用户id：" + uid + " 秒杀成功";
+        } catch (Exception e) {
+            return "用户id：" + uid + " 秒杀失败";
+        }
+    }
 }

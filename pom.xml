@@ -19,6 +19,7 @@
     <properties>
         <java.version>1.8</java.version>
         <springfox.version>3.0.0</springfox.version>
+        <fastjson.version>2.0.12</fastjson.version>
     </properties>
 
     <modules>
@@ -59,5 +60,11 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
     </dependencies>
 </project>
