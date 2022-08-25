@@ -1,0 +1,14 @@
+---
+#singleServerConfig:
+#  address: "redis://127.0.0.1:6379"
+#  password: 12345678
+#  database: 0
+clusterServersConfig:
+  password: 12345678
+  nodeAddresses:
+    - "redis://127.0.0.1:6371"
+    - "redis://127.0.0.1:6372"
+    - "redis://127.0.0.1:6373"
+    - "redis://127.0.0.1:6374"
+    - "redis://127.0.0.1:6375"
+    - "redis://127.0.0.1:6376"
