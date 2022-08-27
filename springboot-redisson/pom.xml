@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.wjb</groupId>
+    <groupId>com.wjb.springboot.redisson</groupId>
     <artifactId>springboot-redisson</artifactId>
     <version>1.0.0</version>
     <name>springboot-redisson</name>

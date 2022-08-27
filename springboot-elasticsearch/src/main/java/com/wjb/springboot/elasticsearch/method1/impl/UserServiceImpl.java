@@ -1,8 +1,8 @@
-package com.wjb.springboot.elasticsearch.service.impl;
+package com.wjb.springboot.elasticsearch.method1.impl;
 
-import com.wjb.springboot.elasticsearch.entity.User;
-import com.wjb.springboot.elasticsearch.repository.UserRepository;
-import com.wjb.springboot.elasticsearch.service.UserService;
+import com.wjb.springboot.elasticsearch.method1.entity.User;
+import com.wjb.springboot.elasticsearch.method1.repository.UserRepository;
+import com.wjb.springboot.elasticsearch.method1.service.UserService;
 import org.elasticsearch.index.query.QueryStringQueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

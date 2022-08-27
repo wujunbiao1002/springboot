@@ -1,7 +1,7 @@
-package com.wjb.springboot.elasticsearch.controller;
+package com.wjb.springboot.elasticsearch.method1.controller;
 
-import com.wjb.springboot.elasticsearch.entity.User;
-import com.wjb.springboot.elasticsearch.service.UserService;
+import com.wjb.springboot.elasticsearch.method1.entity.User;
+import com.wjb.springboot.elasticsearch.method1.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

@@ -1,6 +1,6 @@
-package com.wjb.springboot.elasticsearch.service;
+package com.wjb.springboot.elasticsearch.method1.service;
 
-import com.wjb.springboot.elasticsearch.entity.User;
+import com.wjb.springboot.elasticsearch.method1.entity.User;
 import org.springframework.data.elasticsearch.core.SearchHits;
 
 /**

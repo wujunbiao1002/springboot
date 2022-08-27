@@ -1,6 +1,7 @@
-package com.wjb.springboot.elasticsearch.service;
+package com.wjb.springboot.elasticsearch.method1.service;
 
-import com.wjb.springboot.elasticsearch.entity.User;
+import com.wjb.springboot.elasticsearch.method1.entity.User;
+import com.wjb.springboot.elasticsearch.method1.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
