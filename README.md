@@ -4,3 +4,4 @@
 * *3.SpringBoot Data Jpa 端口：8083*
 * *4.SpringBoot redis 端口：8084*
 * *5.SpringBoot redis 端口：8085*
+* *5.SpringBoot rabbitmq 端口：8086*

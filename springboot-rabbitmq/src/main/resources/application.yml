@@ -1,0 +1,10 @@
+server:
+  port: 8086
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: root
+    password: 12345678
+    connection-timeout: 3000
+    publisher-confirm-type: correlated

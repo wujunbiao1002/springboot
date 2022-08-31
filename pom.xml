@@ -30,6 +30,7 @@
         <module>springboot-mybatisplus-generator</module>
         <module>springboot-redis</module>
         <module>springboot-redisson</module>
+        <module>springboot-rabbitmq</module>
     </modules>
 
     <dependencies>
