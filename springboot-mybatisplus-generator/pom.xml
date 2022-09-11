@@ -8,15 +8,14 @@
         <version>1.0.0</version>
     </parent>
 
-    <groupId>com.wjb.springboot.mybatisplus.generator</groupId>
     <artifactId>springboot-mybatisplus-generator</artifactId>
-    <version>1.0.0</version>
-    <name>springboot-mybatisplus-generator</name>
-    <description>Demo project for Spring Boot</description>
 
     <properties>
-        <java.version>1.8</java.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.baomidou</groupId>

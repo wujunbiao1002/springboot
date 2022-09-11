@@ -8,15 +8,12 @@
         <version>1.0.0</version>
     </parent>
 
-    <groupId>com.wjb.springboot.elasticsearch</groupId>
     <artifactId>springboot-elasticsearch</artifactId>
-    <version>1.0.0</version>
-    <name>springboot-elasticsearch</name>
-    <description>Spring Boot 整合elasticsearch</description>
-    <packaging>jar</packaging>
 
     <properties>
-        <java.version>1.8</java.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -34,6 +31,11 @@
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>elasticsearch-rest-high-level-client</artifactId>
             <version>7.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-oas</artifactId>
+            <version>3.0.0</version>
         </dependency>
     </dependencies>
     <build>

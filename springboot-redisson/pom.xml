@@ -6,17 +6,14 @@
         <groupId>com.wjb.springboot</groupId>
         <artifactId>springboot</artifactId>
         <version>1.0.0</version>
-        <relativePath/>
     </parent>
 
-    <groupId>com.wjb.springboot.redisson</groupId>
     <artifactId>springboot-redisson</artifactId>
-    <version>1.0.0</version>
-    <name>springboot-redisson</name>
-    <description>springboot-redisson整合</description>
 
     <properties>
-        <java.version>1.8</java.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
         <!--对应spring-boot2.4.x-->
