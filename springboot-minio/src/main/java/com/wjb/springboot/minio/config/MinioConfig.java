@@ -1,4 +1,4 @@
-package com.wjb.springboot.config;
+package com.wjb.springboot.minio.config;
 
 import io.minio.BucketExistsArgs;
 import io.minio.MakeBucketArgs;

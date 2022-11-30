@@ -1,6 +1,6 @@
-package com.wjb.springboot.controller;
+package com.wjb.springboot.minio.controller;
 
-import com.wjb.springboot.util.MinioUtils;
+import com.wjb.springboot.minio.util.MinioUtils;
 import io.minio.ObjectWriteResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

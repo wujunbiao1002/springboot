@@ -1,4 +1,4 @@
-package com.wjb.springboot.config;
+package com.wjb.springboot.minio.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

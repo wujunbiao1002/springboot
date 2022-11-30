@@ -1,4 +1,4 @@
-package com.wjb.springboot.util;
+package com.wjb.springboot.minio.util;
 
 import io.minio.*;
 import io.minio.http.Method;
