@@ -33,6 +33,7 @@
         <module>springboot-redisson</module>
         <module>springboot-rabbitmq</module>
         <module>springboot-minio</module>
+        <module>springboot-kafka</module>
     </modules>
 
     <dependencies>

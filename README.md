@@ -6,3 +6,4 @@
 * *5.SpringBoot redis 端口：8085*
 * *5.SpringBoot rabbitmq 端口：8086*
 * *5.SpringBoot Minio 端口：8087*
+* *5.SpringBoot Kafka 端口：8088*
