@@ -1,0 +1,16 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: springboot-dubbo-consumer
+dubbo:
+  application:
+    name: springboot-dubbo-consumer
+  protocol:
+    name: dubbo
+    port: 18090
+    host: 192.168.70.32
+  registry:
+    address: nacos://172.168.201.95:8848
+    parameters:
+      namespace: 69e108eb-936c-4c5b-9124-e1cebd7e58a3
