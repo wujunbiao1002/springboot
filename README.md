@@ -9,3 +9,4 @@
 * *8.SpringBoot Kafka 端口：8088*
 * *9.SpringBoot dubbo consumer 端口：8090*
 * *9.SpringBoot dubbo provider 端口：8091*
+* *10.SpringBoot publish subscribe 端口：8092*

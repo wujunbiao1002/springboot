@@ -35,6 +35,7 @@
         <module>springboot-minio</module>
         <module>springboot-kafka</module>
         <module>springboot-dubbo</module>
+        <module>springboot-publish-subscribe</module>
     </modules>
 
     <dependencies>
